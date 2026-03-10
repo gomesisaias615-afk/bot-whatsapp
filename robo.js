@@ -36,16 +36,6 @@ const pizzas = [
     "Mussarela",
     "Pepperoni"
 ];
-// ======================= DADOS =======================
-
-const pizzas = [
-    "Calabresa",
-    "Frango Catupiry",
-    "Quatro Queijos",
-    "Portuguesa",
-    "Mussarela",
-    "Pepperoni"
-];
 
 const indisponiveis = ["Portuguesa", "Pepperoni"];
 
@@ -456,4 +446,5 @@ client.on("message", async msg => {
     }
 
 });
+
 
