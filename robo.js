@@ -13,8 +13,6 @@ const client = new Client({
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
 });
-    }
-});
 
 client.on('qr', qr => {
     console.clear();
@@ -28,6 +26,16 @@ client.on('ready', () => {
 
 client.initialize();
 
+// ======================= DADOS =======================
+
+const pizzas = [
+    "Calabresa",
+    "Frango Catupiry",
+    "Quatro Queijos",
+    "Portuguesa",
+    "Mussarela",
+    "Pepperoni"
+];
 // ======================= DADOS =======================
 
 const pizzas = [
@@ -448,3 +456,4 @@ client.on("message", async msg => {
     }
 
 });
+
