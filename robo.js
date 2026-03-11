@@ -1,5 +1,5 @@
 // =======================================================
-// BOT DE PIZZARIA
+// BOT WHATSAPP
 // =======================================================
 
 const { Client } = require('whatsapp-web.js');
@@ -7,18 +7,24 @@ const qrcode = require('qrcode-terminal');
 
 const client = new Client({
     puppeteer: {
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser',
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu'
+        ]
     }
 });
 
 client.on('qr', qr => {
-    console.log('QR RECEBIDO');
+    console.log("QR RECEBIDO");
     qrcode.generate(qr, { small: true });
 });
 
 client.on('ready', () => {
-    console.log('✅ BOT CONECTADO');
+    console.log("✅ BOT CONECTADO");
 });
 
 client.initialize();
@@ -443,6 +449,7 @@ client.on("message", async msg => {
     }
 
 });
+
 
 
 
