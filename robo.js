@@ -7,13 +7,11 @@ const qrcode = require('qrcode-terminal');
 
 const client = new Client({
     puppeteer: {
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser',
         headless: true,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu'
+            '--disable-dev-shm-usage'
         ]
     }
 });
@@ -449,6 +447,7 @@ client.on("message", async msg => {
     }
 
 });
+
 
 
 
